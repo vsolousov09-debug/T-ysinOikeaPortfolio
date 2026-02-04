@@ -29,9 +29,9 @@
       </div>
 
       <div class="nav__actions">
-        #portfolioProjektit</a>
-        #aboutMinusta</a>
-        #contactYhteys</a>
+        <a href="#portfolio" data-fi="Projektit" data-en="Projects"></a>
+        <a href="#about" data-fi="Minusta" data-en="About Me"></a>
+        <a href="#contact" data-fi="Yhteys" data-en="Contact"></a>
         <button class="lang-toggle" id="langToggle" aria-label="Vaihda kieli">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
@@ -60,8 +60,8 @@
           <h1 data-fi="Hei, olen Vladislav — <br/>moderni ja huoliteltu <span style='white-space:nowrap;'>portfolio</span> yhdellä sivulla." data-en="Hi, I'm Vladislav — <br/>a modern and polished <span style='white-space:nowrap;'>portfolio</span> on one page."></h1>
           <p class="tagline" data-fi="Teema tottelee tarkkaa kontrastilogiikkaa: vaaleassa tilassa teksti on navy blue, tummassa tilassa teksti on vaalea beige. Selkeä typografia, eleganssi ja pehmeät siirtymät." data-en="The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions."></p>
           <div class="cta-row">
-            #portfolioKatso projektit</a>
-            #contactOta yhteyttä</a>
+            <a href="#portfolio" class="btn btn--solid" data-fi="Katso projektit" data-en="See projects"></a>
+            <a href="#contact" class="btn btn--ghost" data-fi="Ota yhteyttä" data-en="Get in touch"></a>
           </div>
         </div>
       </div>
@@ -220,7 +220,11 @@
 
   <footer class="footer">
     <div class="container" style="display:flex; justify-content:space-between; gap:16px; align-items:center; flex-wrap:wrap;">
-      <div data-fi="© <span id='year'></span> Vladislav Solousov. Kaikki oikeudet pidätetään." data-en="© <span id='year'></span> Vladislav Solousov. All rights reserved."></div>
+      <div>
+        <span data-fi="© " data-en="© "></span>
+        <span id="year"></span>
+        <span data-fi=" Vladislav Solousov. Kaikki oikeudet pidätetään." data-en=" Vladislav Solousov. All rights reserved."></span>
+      </div>
       <div class="socials">
         #GitHub</a>
         #LinkedIn</a>
