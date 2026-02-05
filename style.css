@@ -155,7 +155,7 @@
 
     .nav__actions { display: flex; align-items: center; gap: 12px; }
     .nav__links { display: flex; align-items: center; gap: 12px; }
-    .nav__links .nav-button { padding: 14px 18px; font-size: 1.02rem; }
+    .nav__links .nav-button { padding: 14px 18px; font-size: 1.02rem; font-family: 'Playfair Display', Georgia, serif; }
     .nav__toggles { display: flex; align-items: center; gap: 8px; }
     .theme-toggle, .lang-toggle {
       border: 1px solid var(--btn-outline);
@@ -173,6 +173,22 @@
     .theme-toggle:focus-visible, .lang-toggle:focus-visible { outline: 3px solid var(--focus); }
 
     .theme-toggle svg, .lang-toggle svg { width: 18px; height: 18px; display: block; }
+    /* EN/FI language buttons */
+    .lang-button {
+      border: 1px solid var(--btn-outline);
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 8px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform 120ms ease, box-shadow 200ms ease;
+    }
+    .lang-button.active { box-shadow: var(--shadow); transform: translateY(-1px); }
+    .lang-button:focus-visible { outline: 3px solid var(--focus); }
+
+    /* Use heading font for nav and toggle buttons */
+    .theme-toggle, .lang-button, .nav__links .nav-button { font-family: 'Playfair Display', Georgia, serif; }
 
     /* Small icon button used for social links in header */
     .icon-button {

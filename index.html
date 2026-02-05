@@ -20,27 +20,13 @@
         <div class="brand__name">VLADISLAV</div>
       </div>
 
-      <div class="nav__center">
-        <a class="icon-button linkedin" href="https://www.linkedin.com/in/vladislav-solousov-59ba9a3aa/" target="_blank" rel="noopener" data-en="LinkedIn" data-fi="LinkedIn" aria-label="LinkedIn">
-          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="2" y="2" width="60" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
-            <g transform="translate(0,6)">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" fill="currentColor">in</text>
-            </g>
-          </svg>
-        </a>
-      </div>
+      <!-- center area left intentionally empty; LinkedIn moved to Contact section -->
+      <div class="nav__center"></div>
 
       <div class="nav__actions">
         <div class="nav__toggles">
-          <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-              <path d="M2 12h20"></path>
-            </svg>
-            <span id="langLabel">EN</span>
-          </button>
+          <button class="lang-button" id="langEn" data-lang="en" aria-label="English">EN</button>
+          <button class="lang-button" id="langFi" data-lang="fi" aria-label="Suomi">FI</button>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" aria-pressed="false">
             <!-- Ikoni vaihtuu JS:llä -->
             <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
@@ -202,7 +188,17 @@
     <!-- ======= CONTACT ======= -->
     <section id="contact">
       <div class="container">
-        <h2 class="section__title" data-en="Get in Touch">Get in Touch</h2>
+        <div class="contact__header" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <h2 class="section__title" data-en="Get in Touch">Get in Touch</h2>
+          <a class="icon-button linkedin contact-link" href="https://www.linkedin.com/in/vladislav-solousov-59ba9a3aa/" target="_blank" rel="noopener" data-en="LinkedIn" data-fi="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="60" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
+              <g transform="translate(0,6)">
+                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" fill="currentColor">in</text>
+              </g>
+            </svg>
+          </a>
+        </div>
         <p class="section__desc" data-en="Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).">Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).</p>
 
         <form id="contactForm" aria-label="Yhteydenottolomake">
@@ -290,10 +286,15 @@
     });
 
     // Kieli toggle
-    const langToggle = document.getElementById('langToggle');
-    const langLabel = document.getElementById('langLabel');
+    const langEn = document.getElementById('langEn');
+    const langFi = document.getElementById('langFi');
     let currentLang = localStorage.getItem('lang') || 'en';
-    langLabel.textContent = currentLang.toUpperCase();
+    // set active state on two language buttons
+    function setLangButtonsActive(lang) {
+      if (langEn) langEn.classList.toggle('active', lang === 'en');
+      if (langFi) langFi.classList.toggle('active', lang === 'fi');
+    }
+    setLangButtonsActive(currentLang);
 
     function ensureDataAttributes() {
       // Ensure elements with a language data attribute have both data-en and data-fi
@@ -351,8 +352,10 @@
           el.innerHTML = el.getAttribute('data-' + lang);
         }
       });
-      // Update aria-labels
-      langToggle.setAttribute('aria-label', lang === 'fi' ? 'Vaihda kieli' : 'Switch language');
+      // Update aria-labels for language buttons
+      if (langEn) langEn.setAttribute('aria-label', lang === 'fi' ? 'Aseta kieli: Englanti' : 'Set language: English');
+      if (langFi) langFi.setAttribute('aria-label', lang === 'fi' ? 'Aseta kieli: Suomi' : 'Set language: Finnish');
+      setLangButtonsActive(lang);
       themeToggle.setAttribute('aria-label', lang === 'fi' ? 'Vaihda teema' : 'Switch theme');
       // Update theme label
       const isDark = root.classList.contains('theme-dark');
@@ -363,9 +366,14 @@
     ensureDataAttributes();
     updateLang(currentLang);
 
-    langToggle.addEventListener('click', () => {
-      currentLang = currentLang === 'fi' ? 'en' : 'fi';
-      langLabel.textContent = currentLang.toUpperCase();
+    // Language buttons listeners
+    if (langEn) langEn.addEventListener('click', () => {
+      currentLang = 'en';
+      localStorage.setItem('lang', currentLang);
+      updateLang(currentLang);
+    });
+    if (langFi) langFi.addEventListener('click', () => {
+      currentLang = 'fi';
       localStorage.setItem('lang', currentLang);
       updateLang(currentLang);
     });
