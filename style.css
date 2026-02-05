@@ -1,142 +1,317 @@
+         /* =========================
+       VÄRIT & TYYLI-ASETUKSET
+       ========================= */
+    :root {
+      --navy: #0A1A2F;   /* Tumma teema */
+      --beige: #F5EEDD;  /* Vaalea teema */
+      --radius: 14px;
+      --radius-sm: 10px;
+      --radius-xs: 8px;
 
-<!DOCTYPE html>
-<html lang="en" class="theme-light">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vladislav Solousov — Portfolio</title>
-  <meta name="description" content="Moderni ja elegantti portfolio: navy blue & vaalea beige -teema, vahva kontrasti, laadukas typografia." />
+      --container-w: 1100px;
 
-  <!-- IMPORTANT: poistetaan selainten automaattinen dark-mode -->
-  <meta name="color-scheme" content="light" />
-
-  <meta name="theme-color" content="#0A1A2F" id="meta-theme-color" />
-
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-
-  <!-- ======= HEADER ======= -->
-  <header>
-    <div class="container nav" role="navigation" aria-label="Päävalikko">
-      <div class="brand">
-        <div class="brand__logo" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="3" y="3" width="18" height="18" rx="4" stroke="currentColor" opacity=".25"/>
-            <path d="M7 16V8h3.5a3.5 3.5 0 1 1 0 7H7z" fill="currentColor" opacity=".55"/>
-            <path d="M14 8h3v8h-3" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
-          </svg>
-        </div>
-        <div class="brand__name">Vladislav Solousov</div>
-      </div>
-
-      <div class="nav__actions">
-        <a href="#portfolio">Projektit</a>
-        <a href="#about">Minusta</a>
-        <a href="#contact">Yhteys</a>
-
-        <button class="lang-toggle" id="langToggle" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            <path d="M2 12h20"></path>
-          </svg>
-          <span id="langLabel">FI</span>
-        </button>
-
-        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
-          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor"></svg>
-          <span id="themeLabel">Teema</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- (ALL YOUR CONTENT — sama kuin ennen, en muuta sitä) -->
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme logic
-    const root = document.documentElement;
-    const metaTheme = document.getElementById('meta-theme-color');
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const themeLabel = document.getElementById('themeLabel');
-
-    const THEMES = { DARK: "theme-dark", LIGHT: "theme-light" };
-
-    function setTheme(theme, persist = true) {
-      root.classList.remove(THEMES.DARK, THEMES.LIGHT);
-      root.classList.add(theme);
-
-      metaTheme.setAttribute(
-        "content",
-        theme === THEMES.DARK ? "#0A1A2F" : "#F5EEDD"
-      );
-
-      updateToggleIcon(theme);
-      if (persist) localStorage.setItem("theme", theme);
+      /* Typografia */
+      --font-body: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --h1: clamp(2.2rem, 4.2vw, 3.8rem);
+      --h2: clamp(1.6rem, 3.0vw, 2.2rem);
+      --h3: clamp(1.2rem, 2.2vw, 1.4rem);
+      --p:  clamp(1rem, 1.2vw, 1.08rem);
     }
 
-    function updateToggleIcon(theme) {
-      const isDark = theme === THEMES.DARK;
-      themeToggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+    /* Teemakohtaiset tokenit — HUOM: tekstin väri seuraa pyyntöäsi 1:1 */
+    html.theme-dark {
+      --bg: var(--navy);
+      --text: var(--beige);
+      --muted: rgba(245, 238, 221, 0.75);
+      --surface: rgba(245, 238, 221, 0.04);
+      --surface-2: rgba(245, 238, 221, 0.06);
+      --border: rgba(245, 238, 221, 0.14);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      --shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.35);
+      --link: var(--beige);
 
-      themeIcon.innerHTML = isDark
-        ? `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke-width="1.4" />`
-        : `<circle cx="12" cy="12" r="4" stroke-width="1.4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M18.4 5.6l1.4-1.4M5.6 18.4 4.2 19.8M18.4 18.4l1.4 1.4" stroke-width="1.4"/>`;
-
-      themeLabel.textContent = isDark ? "Tumma" : "Vaalea";
+      --btn-bg: var(--beige);
+      --btn-text: var(--navy);
+      --btn-outline: var(--beige);
+      --focus: rgba(245, 238, 221, 0.55);
+      --selection: rgba(245, 238, 221, 0.25);
+      --gradient: radial-gradient(1200px 600px at 10% -10%, rgba(255,255,255,0.05), transparent 60%),
+                  radial-gradient(900px 400px at 110% 10%, rgba(255,255,255,0.04), transparent 60%);
     }
 
-    (function initTheme() {
-      const saved = localStorage.getItem("theme");
-      if (saved === THEMES.DARK || saved === THEMES.LIGHT) {
-        setTheme(saved, false);
-        return;
-      }
-      setTheme(THEMES.LIGHT, false);
-    })();
+    html.theme-light {
+      --bg: var(--beige);
+      --text: var(--navy);
+      --muted: rgba(10, 26, 47, 0.78);
+      --surface: rgba(10, 26, 47, 0.06);
+      --surface-2: rgba(10, 26, 47, 0.09);
+      --border: rgba(10, 26, 47, 0.15);
+      --shadow: 0 10px 24px rgba(10, 26, 47, 0.18);
+      --shadow-sm: 0 6px 14px rgba(10, 26, 47, 0.16);
+      --link: var(--navy);
 
-    themeToggle.addEventListener("click", () => {
-      const next = root.classList.contains(THEMES.DARK)
-        ? THEMES.LIGHT
-        : THEMES.DARK;
-      setTheme(next);
-    });
-
-    // Language logic
-    let currentLang = localStorage.getItem('lang') || 'fi';
-    const langLabel = document.getElementById('langLabel');
-
-    function updateLang(lang) {
-      document.documentElement.lang = lang;
-      langLabel.textContent = lang.toUpperCase();
+      --btn-bg: var(--navy);
+      --btn-text: var(--beige);
+      --btn-outline: var(--navy);
+      --focus: rgba(10, 26, 47, 0.4);
+      --selection: rgba(10, 26, 47, 0.16);
+      --gradient: radial-gradient(1200px 600px at 10% -10%, rgba(10,26,47,0.08), transparent 60%),
+                  radial-gradient(900px 400px at 110% 10%, rgba(10,26,47,0.06), transparent 60%);
     }
 
-    updateLang(currentLang);
+    /* Yleinen asettelu & animaatioasetukset */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      background-image: var(--gradient);
+      background-attachment: fixed;
+      transition: background-color 320ms ease, color 220ms ease, background-image 320ms ease;
+    }
+    ::selection { background: var(--selection); }
 
-    langToggle.addEventListener("click", () => {
-      currentLang = currentLang === "fi" ? "en" : "fi";
-      localStorage.setItem("lang", currentLang);
-      updateLang(currentLang);
-    });
+    .container {
+      width: min(100%, var(--container-w));
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-    // Header hide on scroll - FIXED
-    let lastScrollY = window.scrollY;
-    window.addEventListener("scroll", () => {
-      const header = document.querySelector("header");
-      if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        header.classList.add("hidden");
-      } else {
-        header.classList.remove("hidden");
-      }
-      lastScrollY = window.scrollY;
-    });
-  </script>
+    /* Skip link saavutettavuus */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: auto;
+      width: 1px; height: 1px;
+      overflow: hidden;
+    }
+    .skip-link:focus {
+      position: fixed;
+      left: 20px; top: 20px;
+      width: auto; height: auto;
+      padding: 10px 14px;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-sm);
+      z-index: 10000;
+      outline: 3px solid var(--focus);
+    }
 
-</body>
-</html>
-``
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: saturate(130%) blur(8px);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.0)) padding-box,
+                  var(--surface-2) border-box;
+      border-bottom: 1px solid var(--border);
+    }
+    header.hidden {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; letter-spacing: 0.4px;
+    }
+    .brand__logo {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface);
+      display: grid; place-items: center;
+      box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+    }
+    .brand__name { font-size: 1.02rem; }
+
+    .nav__actions { display: flex; align-items: center; gap: 10px; }
+    .theme-toggle, .lang-toggle {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 10px;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 120ms ease, background 200ms ease, border-color 200ms ease;
+    }
+    .theme-toggle:hover, .lang-toggle:hover { transform: translateY(-1px); }
+    .theme-toggle:active, .lang-toggle:active { transform: translateY(0); }
+    .theme-toggle:focus-visible, .lang-toggle:focus-visible { outline: 3px solid var(--focus); }
+
+    .theme-toggle svg, .lang-toggle svg { width: 18px; height: 18px; display: block; }
+
+    /* Hero */
+    .hero {
+      padding: clamp(56px, 6.2vw, 92px) 0 clamp(28px, 4vw, 46px);
+    }
+    .hero__inner {
+      display: grid; gap: 18px;
+      max-width: 860px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.92rem; color: var(--muted);
+      background: var(--surface);
+      padding: 8px 12px; border-radius: 999px;
+      border: 1px solid var(--border);
+      width: fit-content;
+    }
+    h1 {
+      font-size: var(--h1);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+      margin: 0;
+    }
+    .tagline {
+      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+      color: var(--muted);
+      margin-top: 6px;
+    }
+    .cta-row {
+      display: flex; align-items: center; gap: 12px;
+      margin-top: 18px;
+    }
+    .btn {
+      border: none; cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 16px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: transform 120ms ease, box-shadow 200ms ease, background 200ms ease, color 200ms ease, border-color 200ms ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--focus); }
+    .btn--solid   { background: var(--btn-bg); color: var(--btn-text); box-shadow: var(--shadow-sm); }
+    .btn--solid:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn--ghost   { background: transparent; color: var(--text); border: 1.5px solid var(--btn-outline); }
+    .btn--ghost:hover { transform: translateY(-1px); }
+
+    /* Section wrapper */
+    section { padding: clamp(30px, 5vw, 60px) 0; }
+    .section__title {
+      font-size: var(--h2); margin-bottom: 12px; line-height: 1.2;
+    }
+    .section__desc {
+      color: var(--muted); margin-top: 4px; margin-bottom: 20px;
+      max-width: 760px;
+    }
+
+    /* Kortit ja pinnat */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform 160ms ease, box-shadow 200ms ease, background 220ms ease, border-color 220ms ease;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .card__pad { padding: 18px; }
+
+    /* About */
+    .about {
+      display: grid; gap: 18px;
+      grid-template-columns: 1.1fr 1fr;
+    }
+    @media (max-width: 850px) {
+      .about { grid-template-columns: 1fr; }
+    }
+    .badge-row {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border-radius: var(--radius-sm);
+      background: var(--surface-2); border: 1px solid var(--border);
+      color: var(--text); font-weight: 600; font-size: 0.92rem;
+    }
+    .badge svg { width: 18px; height: 18px; }
+
+    /* Portfolio grid */
+    .grid {
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-12 { grid-column: span 12; }
+    @media (max-width: 900px) {
+      .col-6 { grid-column: span 12; }
+      .col-4 { grid-column: span 12; }
+    }
+
+    .project {
+      display: grid; grid-template-rows: auto 1fr;
+      overflow: hidden;
+    }
+    .project__media {
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0) 40%),
+        repeating-linear-gradient(135deg, transparent 0 6px, rgba(0,0,0,0.05) 6px 12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .project__body { padding: 14px 16px 16px; }
+    .project__title {
+      font-size: var(--h3); margin: 0 0 6px 0;
+    }
+    .project__meta {
+      display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .project__tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+    .tag {
+      font-size: 0.85rem; font-weight: 600; letter-spacing: .2px;
+      padding: 6px 10px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--border);
+    }
+
+    /* Contact */
+    form {
+      display: grid; gap: 12px; max-width: 680px;
+    }
+    label { font-weight: 600; }
+    .input, textarea {
+      width: 100%;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font: inherit;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+    .input::placeholder, textarea::placeholder { color: var(--muted); }
+    .input:focus, textarea:focus {
+      outline: 3px solid var(--focus);
+      border-color: transparent;
+    }
+    textarea { min-height: 140px; resize: vertical; }
+
+    .footer {
+      padding: 36px 0 60px; color: var(--muted);
+      border-top: 1px solid var(--border);
+      margin-top: 30px;
+    }
+    .socials { display: flex; gap: 12px; flex-wrap: wrap; }
+    .link {
+      color: var(--link); text-underline-offset: 3px; text-decoration-thickness: 1.5px;
+      transition: opacity 160ms ease;
+    }
+    .link:hover { opacity: 0.8; }
+
+    /* Motion-vähennys */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
