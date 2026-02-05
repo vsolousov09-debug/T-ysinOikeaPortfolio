@@ -1,6 +1,7 @@
          /* =========================
        VÄRIT & TYYLI-ASETUKSET
        ========================= */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
     :root {
       --navy: #0A1A2F;   /* Tumma teema */
       --beige: #F5EEDD;  /* Vaalea teema */
@@ -134,8 +135,18 @@
       box-shadow: var(--shadow-sm); border: 1px solid var(--border);
     }
     .brand__name { font-size: 1.02rem; }
+    .brand__name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.08rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
 
-    .nav__actions { display: flex; align-items: center; gap: 10px; }
+    .nav__actions { display: flex; align-items: center; gap: 12px; }
+    .nav__links { display: flex; align-items: center; gap: 10px; }
+    .nav__toggles { display: flex; align-items: center; gap: 8px; }
     .theme-toggle, .lang-toggle {
       border: 1px solid var(--btn-outline);
       background: var(--btn-bg);
