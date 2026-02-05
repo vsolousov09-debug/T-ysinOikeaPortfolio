@@ -59,10 +59,7 @@
         <div class="hero__inner">
           <h1 data-en="Hi, I'm Vladislav — <br/>a modern and polished <span style='white-space:nowrap;'>portfolio</span> on one page.">Hei, olen Vladislav — <br/>moderni ja huoliteltu <span style="white-space:nowrap;">portfolio</span> yhdellä sivulla.</h1>
           <p class="tagline" data-en="The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.">The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.</p>
-          <div class="cta-row">
-            <a href="#portfolio" class="btn btn--solid" data-en="See projects" data-fi="Katso projektit">See projects</a>
-            <a href="#contact" class="btn btn--ghost" data-en="Get in touch" data-fi="Ota yhteyttä">Get in touch</a>
-          </div>
+          <!-- CTAs removed as requested -->
         </div>
       </div>
     </section>
@@ -289,6 +286,27 @@
     let currentLang = localStorage.getItem('lang') || 'en';
     langLabel.textContent = currentLang.toUpperCase();
 
+    function ensureDataAttributes() {
+      // Ensure elements with a language data attribute have both data-en and data-fi
+      const nodes = document.querySelectorAll('[data-en], [data-fi], [data-placeholder-en], [data-placeholder-fi]');
+      nodes.forEach(el => {
+        // content attributes
+        if (el.hasAttribute('data-en') && !el.hasAttribute('data-fi')) {
+          el.setAttribute('data-fi', el.innerHTML);
+        }
+        if (el.hasAttribute('data-fi') && !el.hasAttribute('data-en')) {
+          el.setAttribute('data-en', el.innerHTML);
+        }
+        // placeholder attributes for inputs
+        if (el.hasAttribute('data-placeholder-en') && !el.hasAttribute('data-placeholder-fi')) {
+          el.setAttribute('data-placeholder-fi', el.getAttribute('placeholder') || '');
+        }
+        if (el.hasAttribute('data-placeholder-fi') && !el.hasAttribute('data-placeholder-en')) {
+          el.setAttribute('data-placeholder-en', el.getAttribute('placeholder') || '');
+        }
+      });
+    }
+
     function updateLang(lang) {
       document.documentElement.lang = lang;
       const elements = document.querySelectorAll('[data-' + lang + ']');
@@ -307,6 +325,8 @@
       themeLabel.textContent = isDark ? (lang === 'fi' ? 'Tumma' : 'Dark') : (lang === 'fi' ? 'Vaalea' : 'Light');
     }
 
+    // Ensure language attributes exist, then initialize language
+    ensureDataAttributes();
     updateLang(currentLang);
 
     langToggle.addEventListener('click', () => {
