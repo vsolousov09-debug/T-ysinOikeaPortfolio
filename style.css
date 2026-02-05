@@ -153,6 +153,19 @@
 
     .theme-toggle svg, .lang-toggle svg { width: 18px; height: 18px; display: block; }
 
+    /* Nav buttons (distinct from theme/lang toggles) */
+    .nav-button {
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 160ms ease, transform 120ms ease;
+    }
+    .nav-button:hover { background: var(--surface); transform: translateY(-1px); }
+
     /* Hero */
     .hero {
       padding: clamp(56px, 6.2vw, 92px) 0 clamp(28px, 4vw, 46px);

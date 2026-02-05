@@ -29,18 +29,18 @@
       </div>
 
       <div class="nav__actions">
-        <a href="#portfolio" data-en="Projects">Projektit</a>
-        <a href="#about" data-en="About Me">Minusta</a>
-        <a href="#contact" data-en="Contact">Yhteys</a>
-        <button class="lang-toggle" id="langToggle" type="button" aria-label="Vaihda kieli">
+        <button class="nav-button" data-target="#portfolio">Projects</button>
+        <button class="nav-button" data-target="#about">About</button>
+        <button class="nav-button" data-target="#contact">Contact</button>
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
             <path d="M2 12h20"></path>
           </svg>
-          <span id="langLabel">FI</span>
+          <span id="langLabel">EN</span>
         </button>
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Vaihda teema" aria-pressed="false">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme" aria-pressed="false">
           <!-- Ikoni vaihtuu JS:llä -->
           <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <path d="M12 3a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V4a1 1 0 0 1 1-1Zm0 15a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0v-1a1 1 0 0 1 1-1ZM4 11H3a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2Zm17 0h-1a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2ZM6.2 6.2a1 1 0 0 1 1.4 0l.7.7a1 1 0 1 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4Zm9.5 9.5a1 1 0 0 1 1.4 0l.7.7a1 1 0 0 1-1.4 1.4l-.7-.7a1 1 0 0 1 0-1.4ZM6.2 17.8a1 1 0 0 0 1.4 0l.7-.7a1 1 0 1 0-1.4-1.4l-.7.7a1 1 0 0 0 0 1.4Zm9.5-9.5a1 1 0 0 0 1.4 0l.7-.7a1 1 0 1 0-1.4-1.4l-.7.7a1 1 0 0 0 0 1.4Z" stroke-width="1.2"/>
@@ -58,7 +58,7 @@
       <div class="container">
         <div class="hero__inner">
           <h1 data-en="Hi, I'm Vladislav — <br/>a modern and polished <span style='white-space:nowrap;'>portfolio</span> on one page.">Hei, olen Vladislav — <br/>moderni ja huoliteltu <span style="white-space:nowrap;">portfolio</span> yhdellä sivulla.</h1>
-          <p class="tagline" data-en="The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.">Teema tottelee tarkkaa kontrastilogiikkaa: vaaleassa tilassa teksti on navy blue, tummassa tilassa teksti on vaalea beige. Selkeä typografia, eleganssi ja pehmeät siirtymät.</p>
+          <p class="tagline" data-en="The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.">The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.</p>
           <div class="cta-row">
             <a href="#portfolio" class="btn btn--solid" data-en="See projects">Katso projektit</a>
             <a href="#contact" class="btn btn--ghost" data-en="Get in touch">Ota yhteyttä</a>
@@ -70,14 +70,14 @@
     <!-- ======= ABOUT ======= -->
     <section id="about">
       <div class="container">
-        <h2 class="section__title" data-en="About Me">Minusta</h2>
-        <p class="section__desc" data-en="I am a Student focusing on quality user interfaces, clear typography and functional color contrast. My goal is to build a clear, quickly comprehensible and visually balanced whole without unnecessary gimmicks.">Olen <strong>Opiskelija</strong> keskittyen laadukkaisiin käyttöliittymiin, selkeään typografiaan ja toimivaan väri‑kontrastiin. Tavoitteeni on rakentaa selkeä, nopeasti hahmotettava ja visuaalisesti tasapainoinen kokonaisuus ilman turhaa kikkailua.</p>
+        <h2 class="section__title" data-en="About Me">About Me</h2>
+        <p class="section__desc" data-en="I am a Student focusing on quality user interfaces, clear typography and functional color contrast. My goal is to build a clear, quickly comprehensible and visually balanced whole without unnecessary gimmicks.">I am a student focusing on quality user interfaces, clear typography and functional color contrast. My goal is to build a clear, quickly comprehensible and visually balanced whole without unnecessary gimmicks.</p>
 
         <div class="about">
           <div class="card card__pad">
-            <h3 class="section__title" style="font-size:1.25rem; margin:0 0 8px;" data-en="Short Introduction">Lyhyt esittely</h3>
-            <p style="margin:0 0 8px;" data-en="I like minimalist style, soft shadows and careful space usage. The most important thing is good readability and contrast — especially in dark mode.">Pidän minimalistisesta tyylistä, pehmeistä varjoista ja huolellisesta tilankäytöstä. Tärkeintä on hyvä luettavuus ja kontrasti — etenkin tummassa tilassa.</p>
-            <p style="margin:0;" data-en="In this base, the themes work exactly according to your description and follow accessibility principles (focus, contrast, reduced motion).">Tässä pohjassa teemat toimivat täsmälleen kuvauksesi mukaan ja noudattavat saavutettavuusperiaatteita (fokus, kontrasti, vähennetty liike).</p>
+            <h3 class="section__title" style="font-size:1.25rem; margin:0 0 8px;" data-en="Short Introduction">Short Introduction</h3>
+            <p style="margin:0 0 8px;" data-en="I like minimalist style, soft shadows and careful space usage. The most important thing is good readability and contrast — especially in dark mode.">I like minimalist style, soft shadows and careful space usage. The most important thing is good readability and contrast — especially in dark mode.</p>
+            <p style="margin:0;" data-en="In this base, the themes work exactly according to your description and follow accessibility principles (focus, contrast, reduced motion).">In this base, the themes work exactly according to the description and follow accessibility principles (focus, contrast, reduced motion).</p>
           </div>
 
           <div class="card card__pad">
@@ -121,17 +121,17 @@
     <!-- ======= PORTFOLIO ======= -->
     <section id="portfolio">
       <div class="container">
-        <h2 class="section__title" data-en="Projects">Projektit</h2>
-        <p class="section__desc" data-en="In the card gallery, hover effects adapt to the theme. Each card maintains strong readability in both dark and light modes.">Korttigalleriassa hover-efektit mukautuvat teemaan. Jokainen kortti säilyttää vahvan luettavuuden sekä tummassa että vaaleassa tilassa.</p>
+        <h2 class="section__title" data-en="Projects">Projects</h2>
+        <p class="section__desc" data-en="In the card gallery, hover effects adapt to the theme. Each card maintains strong readability in both dark and light modes.">In the card gallery, hover effects adapt to the theme. Each card maintains strong readability in both dark and light modes.</p>
 
         <div class="grid">
           <article class="project card col-6">
             <div class="project__media" role="img" aria-label="Projektikuva / Place holder"></div>
             <div class="project__body">
-              <h3 class="project__title" data-en="Precise Contrast UI">Kontrastiltaan täsmällinen UI</h3>
+              <h3 class="project__title" data-en="Precise Contrast UI">Precise Contrast UI</h3>
               <div class="project__meta">
-                <span data-en="Role: UI Design">Rooli: UI-suunnittelu</span>
-                <span data-en="Year: 2026">Vuosi: 2026</span>
+                <span data-en="Role: UI Design">Role: UI Design</span>
+                <span data-en="Year: 2026">Year: 2026</span>
               </div>
               <div class="project__tags">
                 <span class="tag" data-en="Navy">Navy</span>
@@ -144,10 +144,10 @@
           <article class="project card col-6">
             <div class="project__media" role="img" aria-label="Projektikuva / Place holder"></div>
             <div class="project__body">
-              <h3 class="project__title">Minimalistinen portfolio</h3>
+              <h3 class="project__title">Minimalist portfolio</h3>
               <div class="project__meta">
-                <span>Rooli: Front‑end</span>
-                <span>Vuosi: 2026</span>
+                <span>Role: Front‑end</span>
+                <span>Year: 2026</span>
               </div>
               <div class="project__tags">
                 <span class="tag">Grid</span>
@@ -160,10 +160,10 @@
           <article class="project card col-4">
             <div class="project__media"></div>
             <div class="project__body">
-              <h3 class="project__title">Korttidesign</h3>
+              <h3 class="project__title">Card design</h3>
               <div class="project__tags">
                 <span class="tag">Hover</span>
-                <span class="tag">Varjot</span>
+                <span class="tag">Shadows</span>
               </div>
             </div>
           </article>
@@ -171,7 +171,7 @@
           <article class="project card col-4">
             <div class="project__media"></div>
             <div class="project__body">
-              <h3 class="project__title">Saumaton teemanvaihto</h3>
+              <h3 class="project__title">Seamless theme switch</h3>
               <div class="project__tags">
                 <span class="tag">Transitions</span>
                 <span class="tag">LocalStorage</span>
@@ -182,7 +182,7 @@
           <article class="project card col-4">
             <div class="project__media"></div>
             <div class="project__body">
-              <h3 class="project__title">Luettava typografia</h3>
+              <h3 class="project__title">Readable typography</h3>
               <div class="project__tags">
                 <span class="tag">Inter</span>
                 <span class="tag">Clamps</span>
@@ -196,23 +196,23 @@
     <!-- ======= CONTACT ======= -->
     <section id="contact">
       <div class="container">
-        <h2 class="section__title" data-en="Get in Touch">Ota yhteyttä</h2>
-        <p class="section__desc" data-en="Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).">Lähetä viesti niin palaan sinulle. Tämä on staattinen demolomake (voit liittää sen myöhemmin esim. Formspreeen tai omaan backendiiin).</p>
+        <h2 class="section__title" data-en="Get in Touch">Get in Touch</h2>
+        <p class="section__desc" data-en="Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).">Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).</p>
 
         <form aria-label="Yhteydenottolomake" onsubmit="event.preventDefault(); alert(currentLang === 'fi' ? 'Kiitos viestistäsi! (Demo)' : 'Thanks for your message! (Demo)'); this.reset();">
           <div>
-            <label for="name" data-en="Name">Nimi</label>
-            <input class="input" id="name" name="name" type="text" placeholder="Etunimi Sukunimi" data-placeholder-en="First Last" required />
+            <label for="name" data-en="Name">Name</label>
+            <input class="input" id="name" name="name" type="text" placeholder="First Last" data-placeholder-en="First Last" required />
           </div>
           <div>
-            <label for="email" data-en="Email">Sähköposti</label>
-            <input class="input" id="email" name="email" type="email" placeholder="nimi@domain.fi" data-placeholder-en="name@domain.com" required />
+            <label for="email" data-en="Email">Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="name@domain.com" data-placeholder-en="name@domain.com" required />
           </div>
           <div>
-            <label for="message" data-en="Message">Viesti</label>
-            <textarea id="message" name="message" placeholder="Kirjoita viestisi..." data-placeholder-en="Write your message..." required></textarea>
+            <label for="message" data-en="Message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message..." data-placeholder-en="Write your message..." required></textarea>
           </div>
-          <button class="btn btn--solid" type="submit" data-en="Send">Lähetä</button>
+          <button class="btn btn--solid" type="submit" data-en="Send">Send</button>
         </form>
       </div>
     </section>
@@ -223,12 +223,12 @@
       <div>
         <span data-en="© ">© </span>
         <span id="year"></span>
-        <span data-en=" Vladislav Solousov. All rights reserved."> Vladislav Solousov. Kaikki oikeudet pidätetään.</span>
+        <span data-en=" Vladislav Solousov. All rights reserved."> Vladislav Solousov. All rights reserved.</span>
       </div>
       <div class="socials">
-        #GitHub</a>
-        #LinkedIn</a>
-        #contactSähköposti</a>
+        <a class="link" href="#">GitHub</a>
+        <a class="link" href="#">LinkedIn</a>
+        <a class="link" href="#contact">Email</a>
       </div>
     </div>
   </footer>
@@ -313,6 +313,15 @@
       langLabel.textContent = currentLang.toUpperCase();
       localStorage.setItem('lang', currentLang);
       updateLang(currentLang);
+    });
+
+    // Nav button scrolling
+    document.querySelectorAll('.nav-button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = btn.getAttribute('data-target');
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     });
 
     // Päivitä teema jos käyttäjä muuttaa järjestelmäasetusta
