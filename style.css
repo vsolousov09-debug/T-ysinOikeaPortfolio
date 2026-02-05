@@ -115,7 +115,7 @@
       transition: transform 0.3s ease;
       
     }
-    .header.hidden {
+    header.hidden {
       transform: translateY(-100%);
     
     }
