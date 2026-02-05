@@ -20,7 +20,7 @@
         <div class="brand__name">VLADISLAV</div>
       </div>
 
-      <!-- center area left intentionally empty; LinkedIn moved to Contact section -->
+      <!-- center area left intentionally empty -->
       <div class="nav__center"></div>
 
       <div class="nav__actions">
@@ -57,16 +57,14 @@
     <!-- ======= ABOUT ======= -->
     <section id="about">
       <div class="container">
-        <div class="nav__links" style="margin-bottom:30px; margin-top:8px;">
-          <button class="nav-button" data-target="#portfolio" data-en="Projects" data-fi="Projektit">Projects</button>
-          <button class="nav-button" data-target="#about" data-en="About" data-fi="Minusta">About</button>
-          <button class="nav-button" data-target="#contact" data-en="Contact" data-fi="Yhteys">Contact</button>
-        </div>
         <h2 class="section__title" data-en="About Me" data-fi="Tietoa minusta">About Me</h2>
         <p class="section__desc" data-en="I am a Student focusing on quality user interfaces, clear typography and functional color contrast. My goal is to build a clear, quickly comprehensible and visually balanced whole without unnecessary gimmicks." data-fi="Olen opiskelija, joka keskittyy laadukkaisiin käyttöliittymiin, selkeään typografiaan ja toimivaan värikontrastiin. Tavoitteeni on rakentaa selkeä, nopeasti hahmotettava ja visuaalisesti tasapainoinen kokonaisuus ilman turhia kikkailuja.">I am a student focusing on quality user interfaces, clear typography and functional color contrast. My goal is to build a clear, quickly comprehensible and visually balanced whole without unnecessary gimmicks.</p>
 
         <div class="about">
           <div class="card card__pad">
+            <div class="about__photo" aria-hidden="true">
+              <img src="avatar.jpg" alt="Vladislav Solousov" />
+            </div>
             <h3 class="section__title" style="font-size:1.25rem; margin:0 0 8px;" data-en="Short Introduction" data-fi="Lyhyt esittely">Short Introduction</h3>
             <p style="margin:0 0 8px;" data-en="My name is Vladislav Solousov. I am studying Information and Communications Technology at OSAO to become a software developer. I am also completing a double degree by taking upper secondary school courses at Oulu Adult High School." data-fi="Nimeni on Vladislav Solousov. Opiskelen tieto- ja viestintätekniikkaa OSAOssa tullakseni ohjelmistokehittäjäksi. Suoritan myös kaksoistutkintoa ottamalla lukio-opintoja Oulun aikuislukiossa.">My name is Vladislav Solousov. I am studying Information and Communications Technology at OSAO to become a software developer. I am also completing a double degree by taking upper secondary school courses at Oulu Adult High School.</p>
             <p style="margin:0;" data-en="In this base, the themes work exactly according to your description and follow accessibility principles (focus, contrast, reduced motion)." data-fi="Tässä pohjassa teemat toimivat täsmällisesti kuvauksesi mukaisesti ja noudattavat saavutettavuusperiaatteita (focus, kontrasti, vähennetty liike).">In this base, the themes work exactly according to the description and follow accessibility principles (focus, contrast, reduced motion).</p>
@@ -190,14 +188,6 @@
       <div class="container">
         <div class="contact__header" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
           <h2 class="section__title" data-en="Get in Touch" data-fi="Ota yhteyttä">Get in Touch</h2>
-          <a class="icon-button linkedin contact-link" href="https://www.linkedin.com/in/vladislav-solousov-59ba9a3aa/" target="_blank" rel="noopener" data-en="LinkedIn" data-fi="LinkedIn" aria-label="LinkedIn">
-            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="2" y="2" width="60" height="60" rx="8" fill="none" stroke="currentColor" stroke-width="2" />
-              <g transform="translate(0,6)">
-                <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" fill="currentColor">in</text>
-              </g>
-            </svg>
-          </a>
         </div>
         <p class="section__desc" data-en="Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend)." data-fi="Lähetä viesti niin vastaan sinulle. Tämä on staattinen demo-lomake (voit yhdistää sen myöhemmin esim. Formspreen tai omaan backend-palveluun).">Send a message and I'll get back to you. This is a static demo form (you can connect it later e.g. to Formspree or your own backend).</p>
 
@@ -229,7 +219,6 @@
       </div>
       <div class="socials">
         <a class="link" href="#">GitHub</a>
-        <a class="link" href="https://www.linkedin.com/in/vladislav-solousov-59ba9a3aa/" target="_blank" rel="noopener" data-en="LinkedIn" data-fi="LinkedIn">LinkedIn</a>
         <a class="link" href="#contact">Email</a>
       </div>
     </div>

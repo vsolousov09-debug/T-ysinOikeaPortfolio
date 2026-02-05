@@ -146,6 +146,11 @@
       color: var(--text);
     }
 
+    @media (max-width: 480px) {
+      /* Nudge brand name slightly right on small screens */
+      .brand__name { padding-left: 6px; }
+    }
+
     /* Use the same decorative heading font across the site */
     h1, h2, h3, .section__title, .project__title {
       font-family: 'Playfair Display', Georgia, serif;
@@ -256,6 +261,9 @@
       display: grid; gap: 18px;
       max-width: 860px;
     }
+
+    .about__photo { display:flex; justify-content:center; margin-bottom:12px; }
+    .about__photo img { width:120px; height:120px; border-radius:999px; object-fit:cover; border:1px solid var(--border); box-shadow: var(--shadow-sm); }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 0.92rem; color: var(--muted);
