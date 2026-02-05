@@ -144,6 +144,13 @@
       color: var(--text);
     }
 
+    /* Use the same decorative heading font across the site */
+    h1, h2, h3, .section__title, .project__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
     .nav__actions { display: flex; align-items: center; gap: 12px; }
     .nav__links { display: flex; align-items: center; gap: 10px; }
     .nav__toggles { display: flex; align-items: center; gap: 8px; }
