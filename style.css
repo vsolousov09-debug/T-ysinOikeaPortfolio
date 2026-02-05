@@ -171,6 +171,23 @@
 
     .theme-toggle svg, .lang-toggle svg { width: 18px; height: 18px; display: block; }
 
+    /* Small icon button used for social links in header */
+    .icon-button {
+      border: 1px solid var(--btn-outline);
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 8px;
+      border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content:center;
+      width: 40px; height: 40px;
+      cursor: pointer; box-shadow: var(--shadow-sm);
+      transition: transform 120ms ease, background 200ms ease, border-color 200ms ease;
+      text-decoration: none;
+    }
+    .icon-button svg { width: 18px; height: 18px; display:block; }
+    .icon-button:hover { transform: translateY(-1px); }
+    .icon-button.linkedin { border-radius: 10px; }
+
     /* Nav buttons (distinct from theme/lang toggles) */
     .nav-button {
       border: 1px solid var(--btn-outline);
