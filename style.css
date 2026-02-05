@@ -124,6 +124,8 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 16px 0;
     }
+    .nav__center { flex: 1; display:flex; justify-content:center; }
+    .nav__actions { display:flex; align-items:center; gap:12px; }
     .brand {
       display: flex; align-items: center; gap: 12px;
       font-weight: 700; letter-spacing: 0.4px;
@@ -152,7 +154,8 @@
     }
 
     .nav__actions { display: flex; align-items: center; gap: 12px; }
-    .nav__links { display: flex; align-items: center; gap: 10px; }
+    .nav__links { display: flex; align-items: center; gap: 12px; }
+    .nav__links .nav-button { padding: 14px 18px; font-size: 1.02rem; }
     .nav__toggles { display: flex; align-items: center; gap: 8px; }
     .theme-toggle, .lang-toggle {
       border: 1px solid var(--btn-outline);
@@ -187,6 +190,29 @@
     .icon-button svg { width: 18px; height: 18px; display:block; }
     .icon-button:hover { transform: translateY(-1px); }
     .icon-button.linkedin { border-radius: 10px; }
+
+    /* Slightly larger nav buttons look more prominent */
+    .nav__links .nav-button { border-radius: 999px; box-shadow: var(--shadow-sm); }
+
+    /* Subtle, luxurious animations */
+    @keyframes bgFloat {
+      0% { background-position: 10% 10%; }
+      50% { background-position: 30% 40%; }
+      100% { background-position: 10% 10%; }
+    }
+    body { animation: bgFloat 30s ease-in-out infinite; }
+
+    @keyframes floatY {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px); }
+    }
+    .hero__inner { animation: floatY 8s ease-in-out infinite alternate; }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .container > * { animation: fadeInUp 600ms ease both; }
 
     /* Nav buttons (distinct from theme/lang toggles) */
     .nav-button {
