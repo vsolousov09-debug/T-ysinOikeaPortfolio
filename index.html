@@ -29,9 +29,9 @@
       </div>
 
       <div class="nav__actions">
-        <button class="nav-button" data-target="#portfolio">Projects</button>
-        <button class="nav-button" data-target="#about">About</button>
-        <button class="nav-button" data-target="#contact">Contact</button>
+        <button class="nav-button" data-target="#portfolio" data-en="Projects" data-fi="Projektit">Projects</button>
+        <button class="nav-button" data-target="#about" data-en="About" data-fi="Minusta">About</button>
+        <button class="nav-button" data-target="#contact" data-en="Contact" data-fi="Yhteys">Contact</button>
         <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
             <circle cx="12" cy="12" r="10"></circle>
@@ -60,8 +60,8 @@
           <h1 data-en="Hi, I'm Vladislav — <br/>a modern and polished <span style='white-space:nowrap;'>portfolio</span> on one page.">Hei, olen Vladislav — <br/>moderni ja huoliteltu <span style="white-space:nowrap;">portfolio</span> yhdellä sivulla.</h1>
           <p class="tagline" data-en="The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.">The theme follows precise contrast logic: in light mode text is navy blue, in dark mode text is light beige. Clear typography, elegance and smooth transitions.</p>
           <div class="cta-row">
-            <a href="#portfolio" class="btn btn--solid" data-en="See projects">Katso projektit</a>
-            <a href="#contact" class="btn btn--ghost" data-en="Get in touch">Ota yhteyttä</a>
+            <a href="#portfolio" class="btn btn--solid" data-en="See projects" data-fi="Katso projektit">See projects</a>
+            <a href="#contact" class="btn btn--ghost" data-en="Get in touch" data-fi="Ota yhteyttä">Get in touch</a>
           </div>
         </div>
       </div>
@@ -264,7 +264,8 @@
         ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke-width="1.4" />'
         // Aurinko-ikoni (light päällä)
         : '<circle cx="12" cy="12" r="4" stroke-width="1.4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5.6 5.6 4.2 4.2M18.4 5.6l1.4-1.4M5.6 18.4 4.2 19.8M18.4 18.4l1.4 1.4" stroke-width="1.4"/>';
-      themeLabel.textContent = isDark ? (currentLang === 'fi' ? 'Tumma' : 'Dark') : (currentLang === 'fi' ? 'Vaalea' : 'Light');
+      const lang = document.documentElement.lang || 'en';
+      themeLabel.textContent = isDark ? (lang === 'fi' ? 'Tumma' : 'Dark') : (lang === 'fi' ? 'Vaalea' : 'Light');
     }
 
     (function initTheme() {

@@ -137,9 +137,9 @@
 
     .nav__actions { display: flex; align-items: center; gap: 10px; }
     .theme-toggle, .lang-toggle {
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
+      border: 1px solid var(--btn-outline);
+      background: var(--btn-bg);
+      color: var(--btn-text);
       padding: 10px 12px;
       border-radius: 999px;
       display: inline-flex; align-items: center; gap: 10px;
@@ -157,14 +157,18 @@
     .nav-button {
       padding: 8px 12px;
       border-radius: 8px;
-      background: transparent;
-      border: 1px solid transparent;
-      color: var(--text);
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-outline);
+      color: var(--btn-text);
       cursor: pointer;
       font-weight: 600;
       transition: background 160ms ease, transform 120ms ease;
     }
-    .nav-button:hover { background: var(--surface); transform: translateY(-1px); }
+    .nav-button:hover { background: color-mix(in srgb, var(--btn-bg) 88%, var(--surface) 12%); transform: translateY(-1px); }
+
+    /* Ensure default .btn ghost/solid reflect theme vars */
+    .btn--solid { background: var(--btn-bg); color: var(--btn-text); }
+    .btn--ghost { background: transparent; color: var(--btn-text); border: 1.5px solid var(--btn-outline); }
 
     /* Hero */
     .hero {
