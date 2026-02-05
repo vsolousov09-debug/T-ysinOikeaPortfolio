@@ -280,7 +280,6 @@
     themeToggle.addEventListener('click', () => {
       const next = root.classList.contains(THEMES.DARK) ? THEMES.LIGHT : THEMES.DARK;
       setTheme(next);
-      alert('Teema vaihdettu!');
     });
 
     // Kieli toggle
@@ -314,7 +313,6 @@
       langLabel.textContent = currentLang.toUpperCase();
       localStorage.setItem('lang', currentLang);
       updateLang(currentLang);
-      alert('Kieli vaihdettu!');
     });
 
     // Päivitä teema jos käyttäjä muuttaa järjestelmäasetusta
@@ -326,7 +324,6 @@
     }
 
     // Header hide on scroll
-    /*
     let lastScrollY = window.scrollY;
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
@@ -337,7 +334,6 @@
       }
       lastScrollY = window.scrollY;
     });
-    */
   </script>
 </body>
 </html>
